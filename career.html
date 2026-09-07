@@ -406,7 +406,7 @@
       <!-- Apply Form / Action -->
       <div class="space-y-4">
         <h4 class="font-bold uppercase tracking-wider text-white text-xs">Apply For This Position</h4>
-        <form @submit.prevent="alert('Application submitted successfully! Our HR team will contact you soon.'); modalOpen = false;" class="space-y-3">
+        <form action="https://formspree.io/f/xnpqgqzk" method="POST" @submit="alert('Application submitted successfully! Our HR team will contact you soon.')">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <input type="text" placeholder="Full Name" required class="bg-black border border-gray-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#d4af37]">
             <input type="email" placeholder="Email Address" required class="bg-black border border-gray-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#d4af37]">
