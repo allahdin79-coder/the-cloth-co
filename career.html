@@ -408,10 +408,11 @@
         <h4 class="font-bold uppercase tracking-wider text-white text-xs">Apply For This Position</h4>
         <form action="https://formspree.io/f/xnpqgqzk" method="POST" @submit="alert('Application submitted successfully! Our HR team will contact you soon.')">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input type="text" placeholder="Full Name" required class="bg-black border border-gray-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#d4af37]">
-            <input type="email" placeholder="Email Address" required class="bg-black border border-gray-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#d4af37]">
-          </div>
-          <input type="text" placeholder="Phone Number / WhatsApp" required class="w-full bg-black border border-gray-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#d4af37]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <input type="text" name="full_name" placeholder="Full Name" required class="bg-black border border-gray-800 text-white w-full px-4 py-3 text-xs rounded-xl focus:outline-none focus:border-[#d4af37]">
+              <input type="email" name="email" placeholder="Email Address" required class="bg-black border border-gray-800 text-white w-full px-4 py-3 text-xs rounded-xl focus:outline-none focus:border-[#d4af37]">
+            </div>
+              <input type="text" name="phone" placeholder="Phone Number / WhatsApp" required class="w-full bg-black border border-gray-800 text-white px-4 py-3 text-xs rounded-xl focus:outline-none focus:border-[#d4af37]">
           <button type="submit" class="w-full py-3.5 bg-[#d4af37] hover:bg-[#b3922e] text-black font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-[0_5px_15px_rgba(212,175,55,0.3)] cursor-pointer">
             Submit Application &rarr;
           </button>
