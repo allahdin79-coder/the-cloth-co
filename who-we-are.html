@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who We Are | The Cloth Co.</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Alpine.js Core -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Alpine.js Intersect Plugin -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    :root {
+      --bg-charcoal: #121212;
+      --bg-surface: #1a1a1a;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #e6ca65;
+    }
+  </style>
+</head>
+<body class="bg-[#121212] text-[#f5f5f5] font-sans antialiased" x-data="{ quoteModalOpen: false, mobileMenuOpen: false }">
+
+  <!-- TOP INFO BAR -->
+  <div class="bg-[#0d0d0d] text-[#d1d5db] text-xs py-2.5 px-6 border-b border-[#262626] hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <a href="tel:+971509314257" class="hover:text-[#e6ca65] transition"><i class="fa-solid fa-phone mr-2 text-[#d4af37]"></i>+971 50 931 4257</a>
+        <a href="mailto:info@theclothco.ae" class="hover:text-[#e6ca65] transition"><i class="fa-solid fa-envelope mr-2 text-[#d4af37]"></i>info@theclothco.ae</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://facebook.com/theclothco.ae/" class="hover:text-[#d4af37]"[cite: 4, 5]><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/theclothco.ae/" class="hover:text-[#d4af37]"[cite: 4, 5]><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/the-cloth-co/" class="hover:text-[#d4af37]"[cite: 4, 5]><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-[#121212]/95 backdrop-blur-md border-b border-[#262626] shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 no-underline">
+        <img src="images/clothco.png" alt="The Cloth Co." class="h-20 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest uppercase">
+        <a href="index.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Home</a>
+        <a href="who-we-are.html" class="text-[#e5e7eb] hover:text-[#d4af37] transition">Who We Are</a>
+        
+        <!-- OUR PRODUCTS DROPDOWN MENU -->
+        <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <a href="our-products.html" class="flex items-center text-[#9ca3af] hover:text-[#d4af37] py-2 transition">
+            OUR PRODUCTS <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+          </a>
+          
+          <div x-show="open" 
+               x-transition:enter="transition ease-out duration-150"
+               x-transition:enter-start="opacity-0 transform scale-95"
+               x-transition:enter-end="opacity-100 transform scale-100"
+               x-transition:leave="transition ease-in duration-100"
+               x-transition:leave-start="opacity-100 transform scale-100"
+               x-transition:leave-end="opacity-0 transform scale-95"
+               class="absolute left-0 mt-0 w-48 bg-[#1a1a1a] border border-[#262626] shadow-2xl py-2 z-50 text-left uppercase text-[11px] font-semibold tracking-wider" 
+               x-cloak>
+            <a href="bric-a-brac.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Bric-a-Brac</a>
+            <a href="used-toys.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Toys</a>
+            <a href="used-shoes.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Shoes</a>
+            <a href="used-handbags.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Handbags</a>
+            <a href="used-clothes.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Clothes</a>
+            <a href="wiping-rags.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Wiping Rags</a>
+          </div>
+        </div>
+
+        <a href="quality-standards.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Quality Standards</a>
+        <a href="career.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Career</a>
+        <a href="contact-us.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Contact Us</a>
+      </nav>
+
+      <!-- Desktop Get A Quote Button -->
+      <button @click="quoteModalOpen = true" class="hidden md:inline-block bg-[#d4af37] text-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#e6ca65] transition shadow-lg cursor-pointer">
+        Get A Quote
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-xl text-white focus:outline-none cursor-pointer">
+        <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div x-show="mobileMenuOpen" class="md:hidden bg-[#1a1a1a] border-b border-[#262626] px-6 py-4 space-y-3 font-bold text-xs uppercase tracking-wider text-[#9ca3af]" x-cloak>
+      <a href="index.html" class="block py-2 hover:text-[#d4af37]">Home</a>
+      <a href="who-we-are.html" class="block py-2 text-white hover:text-[#d4af37]">Who We Are</a>
+      <a href="our-products.html" class="block py-2 hover:text-[#d4af37]">Our Products</a>
+      <a href="quality-standards.html" class="block py-2 hover:text-[#d4af37]">Quality Standards</a>
+      <a href="career.html" class="block py-2 hover:text-[#d4af37]">Career</a>
+      <a href="contact-us.html" class="block py-2 hover:text-[#d4af37]">Contact Us</a>
+      <div class="pt-2">
+        <button @click="quoteModalOpen = true; mobileMenuOpen = false" class="w-full text-center py-3 bg-[#d4af37] text-black font-bold rounded-xl cursor-pointer">Get A Quote</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- GET A QUOTE MODAL -->
+  <div x-show="quoteModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" x-cloak>
+    <div @click.away="quoteModalOpen = false" class="bg-[#1a1a1a] border border-[#262626] max-w-lg w-full p-8 rounded-2xl relative text-white shadow-2xl">
+      <button @click="quoteModalOpen = false" class="absolute top-4 right-4 text-[#9ca3af] hover:text-[#d4af37] text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+      
+      <h3 class="text-2xl font-extrabold mb-2 text-white">Request Custom Quote</h3>
+      <p class="text-[#9ca3af] text-xs mb-6 font-light">Direct B2B Pricing & Freight Estimation</p>
+      
+      <form action="https://formspree.io/f/xoeqlvgn" method="POST" class="space-y-4 text-xs">
+    <div>
+        <label class="block font-bold uppercase tracking-wider mb-1 text-[#d1d5db]">Full Name</label>
+        <input type="text" name="full_name" autocomplete="name" required class="w-full bg-[#121212] border border-[#262626] rounded-xl p-3 text-white focus:outline-none focus:border-[#d4af37] transition-colors">
+    </div>
+    <div>
+        <label class="block font-bold uppercase tracking-wider mb-1 text-[#d1d5db]">Destination Port</label>
+        <input type="text" name="destination_port" placeholder="e.g., Jebel Ali / Mombasa / Karachi" required class="w-full bg-[#121212] border border-[#262626] rounded-xl p-3 text-white focus:outline-none focus:border-[#d4af37] transition-colors">
+    </div>
+    <div>
+        <label class="block font-bold uppercase tracking-wider mb-1 text-[#d1d5db]">Product Category</label>
+        <select name="product_category" class="w-full bg-[#121212] border border-[#262626] rounded-xl p-3 text-white focus:outline-none focus:border-[#d4af37] transition-colors">
+            <option value="Bric-a-Brac">Bric-a-Brac</option>
+            <option value="Used Shoes">Used Shoes</option>
+            <option value="Used Handbags">Used Handbags</option>
+            <option value="Used Clothes">Used Clothes</option>
+            <option value="Used Toys">Used Toys</option>
+            <option value="Wiping Rags">Wiping Rags</option>
+        </select>
+    </div>
+    <button type="submit" class="w-full py-3.5 bg-[#d4af37] text-black font-bold uppercase tracking-wider rounded-xl hover:bg-[#b3922e] transition-colors cursor-pointer">Submit Quote Request</button>
+</form>
+    </div>
+  </div>
+
+<!-- PAGE HERO SECTION -->
+  <section class="relative bg-[#121212] text-white py-24 px-6 overflow-hidden border-b border-[#262626]">
+    <div class="absolute inset-0 opacity-15 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="relative max-w-4xl mx-auto text-center space-y-4">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.25em] uppercase block">Corporate Heritage</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Our Global Legacy</h1>
+      <p class="text-[#d1d5db] text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-light">
+        We engineer high-efficiency global apparel supply chains, combining rigorous quality control standards with seamless multi-tier container logistics and wholesale distribution.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE MAIN SECTION WITH HOVER ANIMATION -->
+  <section class="py-20 px-6 bg-[#121212] text-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Image Card with Hover Effect -->
+      <div class="group relative rounded-2xl overflow-hidden border border-[#262626] shadow-xl transition-all duration-700 hover:border-[#d4af37]/50 hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)] cursor-pointer">
+        <div class="overflow-hidden h-80 md:h-[450px]">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" 
+               alt="Who We Are Showroom" 
+               class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div>
+        <span class="text-[#d4af37] text-xs font-bold tracking-[0.2em] uppercase mb-2 block">Foundational Identity</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Who We Are</h2>
+        <p class="text-[#d1d5db] text-xs md:text-sm leading-relaxed mb-6 font-light">
+          At our core, we believe that world-class apparel distribution relies on absolute supply chain precision. Our mission is to bridge the gap between premium garment manufacturing and dependable global logistics, creating a seamless wholesale environment where your bulk inventory delivery is always our highest priority.
+        </p>
+        <p class="text-[#d1d5db] text-xs md:text-sm leading-relaxed mb-8 font-light">
+          Whether you rely on us for consistent high-volume apparel supply or specialized multi-tier distribution networks, our team is committed to managing your inventory lifecycle at every stage, ensuring your business remains agile, fully stocked, and operationally empowered.
+        </p>
+
+        <!-- Feature List -->
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="text-[#d4af37] mt-1 font-bold">🌐</div>
+            <div>
+              <h4 class="font-bold text-sm text-white">GLOBAL DISTRIBUTION NETWORK</h4>
+              <p class="text-[#9ca3af] text-xs font-light">Expansive container logistics channels for reliable, on-time shipping across major worldwide commercial hubs.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="text-[#d4af37] mt-1 font-bold">🛡️</div>
+            <div>
+              <h4 class="font-bold text-sm text-white">RIGOROUS QUALITY ASSURANCE</h4>
+              <p class="text-[#9ca3af] text-xs font-light">A multi-point inspection and grading process focused entirely on maintaining premium material standards for every shipment.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="text-[#d4af37] mt-1 font-bold">🤝</div>
+            <div>
+              <h4 class="font-bold text-sm text-white">TAILORED SUPPLY SOLUTIONS</h4>
+              <p class="text-[#9ca3af] text-xs font-light">Fully customized wholesale inventory and freight strategies built around your brand's unique market demand and scaling timeline.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MISSION & VISION SECTION WITH HOVER ANIMATION -->
+  <section class="py-20 px-6 bg-[#181818] text-white border-t border-[#262626]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Mission Card -->
+      <div class="group bg-[#121212] border border-[#262626] p-8 rounded-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-4 text-[#d4af37]">🎯</div>
+          <h3 class="font-bold text-white text-xl mb-3 group-hover:text-[#d4af37] transition-colors duration-300">Our Mission</h3>
+          <p class="text-[#d1d5db] text-xs md:text-sm leading-relaxed font-light mb-6">
+            To engineer zero-defect apparel supply chains that empower global clothing brands through seamless container logistics, rigorous quality compliance, and predictable wholesale inventory distribution.
+          </p>
+        </div>
+        <div class="overflow-hidden rounded-xl h-52 border border-[#262626]">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+               alt="Our Mission Team" 
+               class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="group bg-[#121212] border border-[#262626] p-8 rounded-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-4 text-[#d4af37]">👁️</div>
+          <h3 class="font-bold text-white text-xl mb-3 group-hover:text-[#d4af37] transition-colors duration-300">Our Vision</h3>
+          <p class="text-[#d1d5db] text-xs md:text-sm leading-relaxed font-light mb-6">
+            To become the premier global benchmark for modern garment logistics, transforming wholesale apparel distribution into a completely transparent, technologically optimized, and sustainably driven global trade network.
+          </p>
+        </div>
+        <div class="overflow-hidden rounded-xl h-52 border border-[#262626]">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
+               alt="Our Vision Executive" 
+               class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUR CORE VALUES SECTION WITH HOVER ANIMATION -->
+  <section class="py-20 px-6 bg-[#121212] text-white border-t border-[#262626]">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.2em] uppercase mb-2 block">Foundational Principles</span>
+      <h2 class="text-3xl font-extrabold mb-3 text-white">Our Core Values</h2>
+      <p class="text-[#9ca3af] text-xs md:text-sm max-w-xl mx-auto font-light">We operate on foundational pillars of strict compliance, logistical efficiency, and transparent partnership to define world-class global apparel distribution.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Value Card 1 -->
+      <div class="group bg-[#1a1a1a] p-8 rounded-2xl border border-[#262626] shadow-md transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer flex flex-col items-center text-center">
+        <div class="text-3xl mb-6 text-[#d4af37] transform group-hover:-translate-y-1 transition-transform duration-300">🏆</div>
+        <h3 class="font-bold text-white text-base mb-3 group-hover:text-[#d4af37] transition-colors duration-300">UNCOMPROMISING QUALITY</h3>
+        <p class="text-[#d1d5db] text-xs leading-relaxed font-light">
+          We enforce rigorous multi-tier inspection protocols across manufacturing stages to guarantee zero-defect, premium wholesale apparel shipments for global brands.
+        </p>
+      </div>
+
+      <!-- Value Card 2 -->
+      <div class="group bg-[#1a1a1a] p-8 rounded-2xl border border-[#262626] shadow-md transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer flex flex-col items-center text-center">
+        <div class="text-3xl mb-6 text-[#d4af37] transform group-hover:-translate-y-1 transition-transform duration-300">📦</div>
+        <h3 class="font-bold text-white text-base mb-3 group-hover:text-[#d4af37] transition-colors duration-300">LOGISTICAL PRECISION</h3>
+        <p class="text-[#d1d5db] text-xs leading-relaxed font-light">
+          We deliver seamless, highly optimized shipping networks ensuring your bulk inventory moves with absolute efficiency, predictability, and on-time execution.
+        </p>
+      </div>
+
+      <!-- Value Card 3 -->
+      <div class="group bg-[#1a1a1a] p-8 rounded-2xl border border-[#262626] shadow-md transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer flex flex-col items-center text-center">
+        <div class="text-3xl mb-6 text-[#d4af37] transform group-hover:-translate-y-1 transition-transform duration-300">🤝</div>
+        <h3 class="font-bold text-white text-base mb-3 group-hover:text-[#d4af37] transition-colors duration-300">CLIENT-CENTRIC INTEGRITY</h3>
+        <p class="text-[#d1d5db] text-xs leading-relaxed font-light">
+          We build transparent, dependable partnerships by tailoring our logistics, container management, and wholesale supply strategies to your unique enterprise scaling timeline.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+ <!-- OUR GLOBAL IMPACT METRICS (0-15M COUNTER) -->
+  <section id="counter-section" class="py-20 px-6 bg-[#181818] text-white border-t border-[#262626]">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.2em] uppercase mb-2 block">Performance Indicators</span>
+      <h2 class="text-3xl font-extrabold mb-3 text-white">Our Global Impact</h2>
+      <p class="text-[#9ca3af] text-xs md:text-sm max-w-xl mx-auto font-light">We drive excellence across our supply networks with high-volume distribution capabilities, guaranteed arrival schedules, and strict compliance.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      
+      <!-- Counter Card 1 (0 to 15M+) -->
+      <div class="group bg-[#121212] text-white p-8 border border-[#262626] rounded-2xl space-y-2 transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer">
+        <div class="text-4xl font-black text-[#d4af37] flex items-center justify-center">
+          <span id="counter-1">0</span><span>M+</span>
+        </div>
+        <h4 class="font-bold text-xs uppercase text-white group-hover:text-[#d4af37] transition-colors duration-300">Annual Shipments</h4>
+        <p class="text-[#9ca3af] text-[11px] leading-tight pt-1 font-light">Managing high-volume garment distribution cycles with complete transit security.</p>
+      </div>
+
+      <!-- Counter Card 2 (0 to 99.4%) -->
+      <div class="group bg-[#121212] text-white p-8 border border-[#262626] rounded-2xl space-y-2 transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer">
+        <div class="text-4xl font-black text-[#d4af37] flex items-center justify-center">
+          <span id="counter-2">0</span><span>%</span>
+        </div>
+        <h4 class="font-bold text-xs uppercase text-white group-hover:text-[#d4af37] transition-colors duration-300">On-Time Delivery</h4>
+        <p class="text-[#9ca3af] text-[11px] leading-tight pt-1 font-light">Ensuring cargo container logistics arrive precisely when your inventory schedules demand it.</p>
+      </div>
+
+      <!-- Counter Card 3 (0 to 100%) -->
+      <div class="group bg-[#121212] text-white p-8 border border-[#262626] rounded-2xl space-y-2 transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer">
+        <div class="text-4xl font-black text-[#d4af37] flex items-center justify-center">
+          <span id="counter-3">0</span><span>%</span>
+        </div>
+        <h4 class="font-bold text-xs uppercase text-white group-hover:text-[#d4af37] transition-colors duration-300">Quality Compliance</h4>
+        <p class="text-[#9ca3af] text-[11px] leading-tight pt-1 font-light">Enforcing rigorous multi-tier inspection protocols to guarantee zero-defect bulk apparel deliveries.</p>
+      </div>
+
+      <!-- Counter Card 4 (0 to 12+) -->
+      <div class="group bg-[#121212] text-white p-8 border border-[#262626] rounded-2xl space-y-2 transition-all duration-500 ease-in-out transform hover:-translate-y-2 hover:border-[#d4af37]/50 hover:shadow-[0_10px_30px_rgba(212,175,55,0.1)] cursor-pointer">
+        <div class="text-4xl font-black text-[#d4af37] flex items-center justify-center">
+          <span id="counter-4">0</span><span>+</span>
+        </div>
+        <h4 class="font-bold text-xs uppercase text-white group-hover:text-[#d4af37] transition-colors duration-300">Global Hubs</h4>
+        <p class="text-[#9ca3af] text-[11px] leading-tight pt-1 font-light">Connecting premium apparel manufacturing centers to major international markets.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTER ANIMATION SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const section = document.getElementById("counter-section");
+      let animated = false;
+
+      const startCounting = () => {
+        if (animated) return;
+        animated = true;
+
+        const el1 = document.getElementById("counter-1");
+        const el2 = document.getElementById("counter-2");
+        const el3 = document.getElementById("counter-3");
+        const el4 = document.getElementById("counter-4");
+
+        let startTime = null;
+        let duration = 6000; // کل وقت 6 سیکنڈ کر دیا گیا ہے تاکہ تسلی سے چلے
+
+        let animateCounters = (currentTime) => {
+          if (!startTime) startTime = currentTime;
+          let progress = (currentTime - startTime) / duration;
+          if (progress > 1) progress = 1;
+
+          // Easing effect for smooth slowdown towards the end
+          let ease = 1 - Math.pow(1 - progress, 3);
+
+          el1.innerText = Math.round(ease * 15);
+          el2.innerText = (ease * 99.4).toFixed(1);
+          el3.innerText = Math.round(ease * 100);
+          el4.innerText = Math.round(ease * 12);
+
+          if (progress < 1) {
+            requestAnimationFrame(animateCounters);
+          } else {
+            el1.innerText = "15";
+            el2.innerText = "99.4";
+            el3.innerText = "100";
+            el4.innerText = "12";
+          }
+        };
+
+        requestAnimationFrame(animateCounters);
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounting();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(section);
+    });
+  </script>
+<!-- CERTIFIED EXCELLENCE SECTION -->
+  <section class="py-20 px-6 bg-[#121212] text-white border-t border-[#262626]">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.2em] uppercase mb-2 block">Accreditations</span>
+      <h2 class="text-3xl font-extrabold mb-3 text-white">Certified Excellence</h2>
+      <p class="text-[#9ca3af] text-xs md:text-sm max-w-xl mx-auto font-light">We partner exclusively with production networks and logistics channels that meet the highest international benchmarks for quality, environmental safety, and ethical labor.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+      
+      <!-- ISO Logo Card -->
+      <div class="group bg-[#1a1a1a] p-4 rounded-2xl border border-[#262626] shadow-md flex items-center justify-center h-44 hover:border-[#d4af37] hover:shadow-[0_15px_35px_rgba(212,175,55,0.15)] transition-all duration-300 cursor-pointer overflow-hidden">
+        <img src="images/iso.png" alt="ISO Standard" class="max-h-16 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+      </div>
+
+      <!-- OEKO-TEX Logo Card -->
+      <div class="group bg-[#1a1a1a] p-4 rounded-2xl border border-[#262626] shadow-md flex items-center justify-center h-44 hover:border-[#d4af37] hover:shadow-[0_15px_35px_rgba(212,175,55,0.15)] transition-all duration-300 cursor-pointer overflow-hidden">
+        <img src="images/oeko-tex.png" alt="OEKO-TEX" class="max-h-16 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+      </div>
+
+      <!-- WRAP Logo Card -->
+      <div class="group bg-[#1a1a1a] p-4 rounded-2xl border border-[#262626] shadow-md flex items-center justify-center h-44 hover:border-[#d4af37] hover:shadow-[0_15px_35px_rgba(212,175,55,0.15)] transition-all duration-300 cursor-pointer overflow-hidden">
+        <img src="images/WRAP_Logo.png" alt="WRAP Compliance" class="max-h-16 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+      </div>
+
+      <!-- SEDEX Logo Card -->
+      <div class="group bg-[#1a1a1a] p-4 rounded-2xl border border-[#262626] shadow-md flex items-center justify-center h-44 hover:border-[#d4af37] hover:shadow-[0_15px_35px_rgba(212,175,55,0.15)] transition-all duration-300 cursor-pointer overflow-hidden">
+        <img src="images/Sedex1.png" alt="SEDEX Audit" class="max-h-16 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- READY TO STREAMLINE YOUR SUPPLY CHAIN CTA -->
+  <section class="py-16 px-6 bg-[#0d0d0d] text-white text-center border-t border-[#262626]">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.2em] uppercase block">Collaborate</span>
+      <h2 class="text-3xl font-extrabold">Ready to Streamline Your Supply Chain?</h2>
+      <p class="text-[#d1d5db] text-xs md:text-sm max-w-2xl mx-auto leading-relaxed font-light">
+        Partner with an industry leader to ensure zero-defect manufacturing, predictable bulk inventory logistics, and seamless global distribution.
+      </p>
+      <button @click="quoteModalOpen = true" class="bg-[#d4af37] text-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#e6ca65] transition shadow-lg cursor-pointer">
+        Request a Proposal
+      </button>
+    </div>
+  </section>
+
+   <!-- FOOTER -->
+  <footer class="bg-[#0a0a0a] text-white border-t border-[#262626] pt-20 pb-4 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-8 text-xs">
+      
+      <!-- Col 1: Brand Info (4 Cols) -->
+      <div class="md:col-span-4 space-y-4 md:-mt-8">
+        <div class="flex items-center space-x-2">
+          <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 no-underline">
+        <img src="images/clothco.png" alt="The Cloth Co." class="h-20 w-auto object-contain">
+      </a>
+        </div>
+        <p class="text-[#9ca3af] text-xs leading-relaxed max-w-[220px]">
+            UAE-based sustainable fashion exporters operating recycling networks, creating environmental impact economies worldwide.
+        </p>
+        <div class="flex space-x-3 pt-2">
+          <a href="https://facebook.com/theclothco.ae/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+          <a href="https://www.instagram.com/theclothco.ae/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-instagram text-xs"></i></a>
+          <a href="https://www.linkedin.com/company/the-cloth-co/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links (2 Cols) -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Quick Links</h4>
+        <ul class="space-y-2.5 text-[#9ca3af] font-light">
+          <li><a href="index.html" class="hover:text-[#d4af37] transition-colors">Home</a></li>
+          <li><a href="who-we-are.html" class="hover:text-[#d4af37] transition-colors">Who We Are</a></li>
+          <li><a href="quality-standards.html" class="hover:text-[#d4af37] transition-colors">Quality Standards</a></li>
+          <li><a href="career.html" class="hover:text-[#d4af37] transition-colors">Career</a></li>
+          <li><a href="contact-us.html" class="hover:text-[#d4af37] transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Products (3 Cols) -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Our Products</h4>
+        <ul class="space-y-2.5 text-[#9ca3af] font-light">
+          <li><a href="bric-a-brac.html" class="hover:text-[#d4af37] transition-colors">Bric-a-Brac</a></li>
+          <li><a href="used-toys.html" class="hover:text-[#d4af37] transition-colors">Used Toys</a></li>
+          <li><a href="used-shoes.html" class="hover:text-[#d4af37] transition-colors">Used Shoes</a></li>
+          <li><a href="used-handbags.html" class="hover:text-[#d4af37] transition-colors">Used Handbags</a></li>
+          <li><a href="used-clothes.html" class="hover:text-[#d4af37] transition-colors">Used Clothes</a></li>
+          <li><a href="wiping-rags.html" class="hover:text-[#d4af37] transition-colors">Wiping Rags</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Details (3 Cols) -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Contact Details</h4>
+        <ul class="space-y-3 text-[#9ca3af] font-light text-xs">
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-phone text-[#d4af37] mt-0.5"></i>
+            <a href="tel:+971509314257" class="hover:text-[#d4af37] transition-colors">+971 50 931 4257</a>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-envelope text-[#d4af37] mt-0.5"></i>
+            <a href="mailto:info@theclothco.ae" class="hover:text-[#d4af37] transition-colors">info@theclothco.ae</a>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-location-dot text-[#d4af37] mt-0.5"></i>
+            <span class="leading-relaxed">Warehouse 12, Industrial Area, Sharjah, UAE</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="max-w-7xl mx-auto border-t border-[#262626] pt-4 flex flex-col md:flex-row items-center justify-between text-[#6b7280] text-[11px] font-light">
+      <p>&copy; 2026 The Cloth Co. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="privacy-policy.html" class="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+        <a href="terms-of-service.html" class="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

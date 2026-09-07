@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://images.unsplash.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https://images.unsplash.com data:;">
+  <title>Terms of Service | The Cloth Co. | Luxury B2B Enterprise Textile Export</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Alpine.js Core -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    :root {
+      --bg-charcoal: #121212;
+      --bg-surface: #1a1a1a;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #e6ca65;
+    }
+  </style>
+</head>
+<body class="bg-[#121212] text-[#f5f5f5] font-sans antialiased" x-data="{ quoteModalOpen: false, mobileMenuOpen: false }">
+
+  <!-- TOP INFO BAR -->
+  <div class="bg-[#0d0d0d] text-[#d1d5db] text-xs py-2.5 px-6 border-b border-[#262626] hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <a href="tel:+971509314257" class="hover:text-[#e6ca65] transition"><i class="fa-solid fa-phone mr-2 text-[#d4af37]"></i>+971 50 931 4257</a>
+        <a href="mailto:info@theclothco.ae" class="hover:text-[#e6ca65] transition"><i class="fa-solid fa-envelope mr-2 text-[#d4af37]"></i>info@theclothco.ae</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://facebook.com/theclothco.ae/" class="hover:text-[#d4af37]"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/theclothco.ae/" class="hover:text-[#d4af37]"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/the-cloth-co/" class="hover:text-[#d4af37]"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-[#121212]/95 backdrop-blur-md border-b border-[#262626] shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 no-underline">
+        <img src="images/clothco.png" alt="The Cloth Co." class="h-20 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest uppercase">
+        <a href="index.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Home</a>
+        <a href="who-we-are.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Who We Are</a>
+        
+        <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+          <a href="our-products.html" class="flex items-center text-[#9ca3af] hover:text-[#d4af37] py-2 transition">
+            OUR PRODUCTS <i class="fa-solid fa-chevron-down ml-1 text-[10px]"></i>
+          </a>
+          <div x-show="open" class="absolute left-0 mt-0 w-48 bg-[#1a1a1a] border border-[#262626] shadow-2xl py-2 z-50 text-left uppercase text-[11px] font-semibold tracking-wider" x-cloak>
+            <a href="bric-a-brac.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Bric-a-Brac</a>
+            <a href="used-toys.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Toys</a>
+            <a href="used-shoes.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Shoes</a>
+            <a href="used-handbags.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Handbags</a>
+            <a href="used-clothes.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Used Clothes</a>
+            <a href="wiping-rags.html" class="block px-4 py-2 text-[#9ca3af] hover:bg-[#262626] hover:text-[#d4af37] transition">Wiping Rags</a>
+          </div>
+        </div>
+
+        <a href="quality-standards.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Quality Standards</a>
+        <a href="career.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Career</a>
+        <a href="contact-us.html" class="text-[#9ca3af] hover:text-[#d4af37] transition">Contact Us</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button @click="quoteModalOpen = true" class="hidden md:inline-block bg-[#d4af37] text-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#e6ca65] transition shadow-lg">
+          Get A Quote
+        </button>
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white text-xl p-2 focus:outline-none">
+          <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION MENU -->
+    <div x-show="mobileMenuOpen" class="md:hidden bg-[#1a1a1a] border-b border-[#262626] px-6 py-6 space-y-4 text-xs font-bold uppercase tracking-widest" x-cloak>
+      <a href="index.html" class="block text-[#9ca3af] hover:text-[#d4af37] py-1">Home</a>
+      <a href="who-we-are.html" class="block text-[#9ca3af] hover:text-[#d4af37] py-1">Who We Are</a>
+      <div class="pt-2 border-t border-[#262626] space-y-3">
+        <a href="quality-standards.html" class="block text-[#9ca3af] hover:text-[#d4af37] py-1">Quality Standards</a>
+        <a href="career.html" class="block text-[#9ca3af] hover:text-[#d4af37] py-1">Career</a>
+        <a href="contact-us.html" class="block text-[#9ca3af] hover:text-[#d4af37] py-1">Contact Us</a>
+      </div>
+      <div class="pt-4">
+        <button @click="quoteModalOpen = true; mobileMenuOpen = false" class="w-full bg-[#d4af37] text-black py-3 text-center text-xs font-bold uppercase tracking-widest shadow-md">
+          Get A Quote
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-[#181818] py-16 px-6 border-b border-[#262626] text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <span class="text-[#d4af37] text-xs font-bold tracking-[0.25em] uppercase">Legal Agreement</span>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Terms of Service</h1>
+      <p class="text-[#9ca3af] text-xs md:text-sm font-light">Last updated: September 2026</p>
+    </div>
+  </section>
+
+  <!-- TERMS OF SERVICE CONTENT -->
+  <section class="py-20 px-6 bg-[#121212] text-[#d1d5db]">
+    <div class="max-w-4xl mx-auto space-y-12 text-xs md:text-sm leading-relaxed font-light">
+      
+      <!-- Section 1 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">1. Acceptance of Terms</h2>
+        <p>
+          Welcome to <strong>The Cloth Co.</strong> By accessing our website, submitting wholesale inquiries, or entering into commercial contracts for the purchase and export of our products (including secondhand clothing, shoes, wiping rags, and accessories), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please refrain from using our digital platforms and services.
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">2. B2B Orders & Minimum Order Quantities (MOQ)</h2>
+        <p>
+          The Cloth Co. operates strictly as an enterprise B2B textile export supplier based in Sharjah, UAE. 
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-[#9ca3af]">
+          <li><strong>Quotations:</strong> All price quotes provided through our website or direct communications are estimates based on current market standards and shipping logistics, subject to final contract confirmation.</li>
+          <li><strong>MOQ Requirements:</strong> Standard wholesale purchases require minimum order quantities equivalent to standard container loads (e.g., 20ft or 40ft High Cube containers) to ensure freight and packing efficiency.</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">3. Shipping, Logistics & Delivery</h2>
+        <p>
+          Export shipments are handled through international freight networks from our UAE processing facilities. Delivery timelines, Incoterms (such as FOB, CIF), and custom clearance responsibilities are explicitly defined in individual commercial invoices and sales contracts agreed upon prior to dispatch. While we maintain rigorous schedules, external shipping line delays or port congestion are outside our direct liability.
+        </p>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">4. Quality Standards & Inspection</h2>
+        <p>
+          We enforce multi-stage manual sorting and hydraulic baling standards to ensure premium grade material distribution. Buyers or appointed inspection agencies (such as SGS or Intertek) may conduct pre-shipment inspections as agreed in the commercial sales contract. Claims regarding cargo condition must be formally lodged within the specified window following port arrival.
+        </p>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">5. Intellectual Property</h2>
+        <p>
+          All content, brand logos, product catalog descriptions, imagery, and structural layouts on this website are the intellectual property of The Cloth Co. Unauthorized reproduction, distribution, or commercial exploitation without prior written consent is strictly prohibited.
+        </p>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="bg-[#1a1a1a] border border-[#262626] p-8 rounded-2xl space-y-3">
+        <h2 class="text-white text-base font-bold uppercase tracking-wide border-l-2 border-[#d4af37] pl-3">6. Contact Information</h2>
+        <p>
+          For any inquiries relating to these Terms of Service or bulk export orders, please contact our corporate desk:
+        </p>
+        <div class="pt-2 space-y-2 text-white font-medium">
+          <p><i class="fa-solid fa-envelope text-[#d4af37] mr-2"></i> <a href="mailto:info@theclothco.ae" class="hover:text-[#d4af37] transition-colors">info@theclothco.ae</a></p>
+          <p><i class="fa-solid fa-phone text-[#d4af37] mr-2"></i> <a href="tel:+971509314257" class="hover:text-[#d4af37] transition-colors">+971 50 931 4257</a></p>
+          <p><i class="fa-solid fa-location-dot text-[#d4af37] mr-2"></i> Warehouse 12, Industrial Area, Sharjah, UAE</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GET A QUOTE MODAL POPUP -->
+  <div x-show="quoteModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4" x-cloak>
+    <div class="bg-[#1a1a1a] border border-[#262626] w-full max-w-lg p-8 rounded-xl relative shadow-2xl" @click.away="quoteModalOpen = false">
+      <button @click="quoteModalOpen = false" class="absolute top-4 right-4 text-[#9ca3af] hover:text-[#d4af37] text-xl font-bold">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="text-xl font-extrabold text-white mb-2 uppercase tracking-wide">Request a Wholesale Quote</h3>
+      <p class="text-[#9ca3af] text-xs mb-6 font-light">Fill out your requirements and our supply team will get back to you with competitive pricing.</p>
+      
+      <form @submit.prevent="alert('Quote request submitted successfully!'); quoteModalOpen = false;" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-[#9ca3af] mb-1 font-bold uppercase tracking-wider">Full Name</label>
+          <input type="text" required class="w-full bg-[#121212] border border-[#262626] p-3 text-white focus:border-[#d4af37] outline-none transition">
+        </div>
+        <div>
+          <label class="block text-[#9ca3af] mb-1 font-bold uppercase tracking-wider">Email Address</label>
+          <input type="email" required class="w-full bg-[#121212] border border-[#262626] p-3 text-white focus:border-[#d4af37] outline-none transition">
+        </div>
+        <div>
+          <label class="block text-[#9ca3af] mb-1 font-bold uppercase tracking-wider">Product Interest / Quantity</label>
+          <textarea rows="3" required class="w-full bg-[#121212] border border-[#262626] p-3 text-white focus:border-[#d4af37] outline-none transition" placeholder="e.g. 20ft container of Used Clothes..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#d4af37] text-black py-3 font-bold uppercase tracking-widest hover:bg-[#e6ca65] transition shadow-md">
+          Submit Quote Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+   <!-- FOOTER -->
+  <footer class="bg-[#0a0a0a] text-white border-t border-[#262626] pt-20 pb-4 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-8 text-xs">
+      
+      <!-- Col 1: Brand Info (4 Cols) -->
+      <div class="md:col-span-4 space-y-4 md:-mt-8">
+        <div class="flex items-center space-x-2">
+          <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 no-underline">
+        <img src="images/clothco.png" alt="The Cloth Co." class="h-20 w-auto object-contain">
+      </a>
+        </div>
+        <p class="text-[#9ca3af] text-xs leading-relaxed max-w-[220px]">
+            UAE-based sustainable fashion exporters operating recycling networks, creating environmental impact economies worldwide.
+        </p>
+        <div class="flex space-x-3 pt-2">
+          <a href="https://facebook.com/theclothco.ae/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+          <a href="https://www.instagram.com/theclothco.ae/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-instagram text-xs"></i></a>
+          <a href="https://www.linkedin.com/company/the-cloth-co/" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#d4af37] hover:text-black transition-colors text-white"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links (2 Cols) -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Quick Links</h4>
+        <ul class="space-y-2.5 text-[#9ca3af] font-light">
+          <li><a href="index.html" class="hover:text-[#d4af37] transition-colors">Home</a></li>
+          <li><a href="who-we-are.html" class="hover:text-[#d4af37] transition-colors">Who We Are</a></li>
+          <li><a href="quality-standards.html" class="hover:text-[#d4af37] transition-colors">Quality Standards</a></li>
+          <li><a href="career.html" class="hover:text-[#d4af37] transition-colors">Career</a></li>
+          <li><a href="contact-us.html" class="hover:text-[#d4af37] transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Our Products (3 Cols) -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Our Products</h4>
+        <ul class="space-y-2.5 text-[#9ca3af] font-light">
+          <li><a href="bric-a-brac.html" class="hover:text-[#d4af37] transition-colors">Bric-a-Brac</a></li>
+          <li><a href="used-toys.html" class="hover:text-[#d4af37] transition-colors">Used Toys</a></li>
+          <li><a href="used-shoes.html" class="hover:text-[#d4af37] transition-colors">Used Shoes</a></li>
+          <li><a href="used-handbags.html" class="hover:text-[#d4af37] transition-colors">Used Handbags</a></li>
+          <li><a href="used-clothes.html" class="hover:text-[#d4af37] transition-colors">Used Clothes</a></li>
+          <li><a href="wiping-rags.html" class="hover:text-[#d4af37] transition-colors">Wiping Rags</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact Details (3 Cols) -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-white border-l-2 border-[#d4af37] pl-2">Contact Details</h4>
+        <ul class="space-y-3 text-[#9ca3af] font-light text-xs">
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-phone text-[#d4af37] mt-0.5"></i>
+            <a href="tel:+971509314257" class="hover:text-[#d4af37] transition-colors">+971 50 931 4257</a>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-envelope text-[#d4af37] mt-0.5"></i>
+            <a href="mailto:info@theclothco.ae" class="hover:text-[#d4af37] transition-colors">info@theclothco.ae</a>
+          </li>
+          <li class="flex items-start space-x-3">
+            <i class="fa-solid fa-location-dot text-[#d4af37] mt-0.5"></i>
+            <span class="leading-relaxed">Warehouse 12, Industrial Area, Sharjah, UAE</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="max-w-7xl mx-auto border-t border-[#262626] pt-4 flex flex-col md:flex-row items-center justify-between text-[#6b7280] text-[11px] font-light">
+      <p>&copy; 2026 The Cloth Co. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="privacy-policy.html" class="hover:text-[#d4af37] transition-colors">Privacy Policy</a>
+        <a href="terms-of-service.html" class="hover:text-[#d4af37] transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
