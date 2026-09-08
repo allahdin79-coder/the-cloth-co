@@ -363,8 +363,8 @@
   </section>
 
 <!-- FIXED POPUP MODAL WINDOW (CENTRALIZED) -->
-  <div x-show="modalOpen" 
-       class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm overflow-y-auto"
+<div x-show="modalOpen" 
+       style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 1rem; background-color: rgba(0, 0, 0, 0.85); overflow-y: auto;"
        x-transition:enter="transition ease-out duration-300"
        x-transition:enter-start="opacity-0"
        x-transition:enter-end="opacity-100"
